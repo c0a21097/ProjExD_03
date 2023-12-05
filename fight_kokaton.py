@@ -128,7 +128,6 @@ class Bomb:
         self.rct.move_ip(self.vx, self.vy)
         screen.blit(self.img, self.rct)
 
-
 class Beam:
     def __init__(self, bird: Bird):
         self.img = pg.image.load(f"{MAIN_DIR}/fig/beam.png")
@@ -169,6 +168,8 @@ def main():
             if event.type == pg.QUIT:
                 return
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:  # スペースキーが押されたら
+                beam = Beam(bird)  # ビームインスタンスの生成
+            if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:  # スペースキーが押されたら
                 beam = Beam(bird)  # ビームインスタンスの生成
         
         for bomb in bombs:

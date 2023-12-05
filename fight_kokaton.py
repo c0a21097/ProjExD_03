@@ -159,9 +159,10 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 return
-            if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:  # スペースキーが押されたら
-                beam = Beam(bird)  # ビームインスタンスの生成
-        
+            if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:  
+                beam = Beam(bird)
+            
+
         screen.blit(bg_img, [0, 0])
         
         #if bomb is not None:
@@ -180,7 +181,6 @@ def main():
                 bird.change_img(6, screen)
         #Noneでない爆弾だけのリストを作る
         bombs = [bomb for bomb in bombs if bomb is not None]
-        
 
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen)

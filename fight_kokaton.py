@@ -161,7 +161,7 @@ def main():
         e_time=time.time()
         t=e_time - s_time
         font = pg.font.Font(None,50)
-        t_text = font.render(f"{t:.2f}時間",time,(255,0,0))
+        t_text = font.render(f"{t:.2f}",time,(255,0,0))
         screen.blit(bg_img, [0, 0])
         screen.blit(t_text, [100, 100])
         

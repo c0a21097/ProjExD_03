@@ -170,6 +170,8 @@ def main():
                 return
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:  # スペースキーが押されたら
                 beam = Beam(bird)  # ビームインスタンスの生成
+            if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:  # スペースキーが押されたら
+                beam = Beam(bird)  # ビームインスタンスの生成
         
         for bomb in bombs:
             if bird.rct.colliderect(bomb.rct):
